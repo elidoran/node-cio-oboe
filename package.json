@@ -1,0 +1,42 @@
+{
+  "name": "@cio/oboe",
+  "version": "0.1.0",
+  "description": "Use Oboe.js with cio to parse a stream of JSON objects.",
+  "main": "lib",
+  "keywords": [
+    "cio",
+    "oboe",
+    "listener",
+    "addon",
+    "plugin",
+    "parse",
+    "json",
+    "stream"
+  ],
+  "author": "Eli Doran <eli+npm@elidoran.com>",
+  "license": "MIT",
+  "scripts": {
+    "build": "coffee --bare --compile lib",
+    "clean": "rm -rf lib/*.js",
+    "prepublish": "npm run build",
+    "postpublish": "npm run clean",
+    "test": "mocha --compilers coffee:coffee-script/register --reporter spec --bail --check-leaks test/lib"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/elidoran/node-cio-oboe.git"
+  },
+  "bugs": "http://github.com/elidoran/node-cio-oboe/issues",
+  "devDependencies": {
+    "cio": "^0.3.0",
+    "coffee-script": "^1.11.1",
+    "mocha": "^3.1.2",
+    "strung": "^1.0.5"
+  },
+  "dependencies": {
+    "oboe": "^2.1.2"
+  },
+  "engines": {
+    "node": ">=0.12"
+  }
+}

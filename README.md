@@ -136,9 +136,9 @@ var client = cio.client({
   , oboe: oboeOptions
 });
 
-// Method #3 - explicitly add the listener
+// Method #3 - instead of options, configure it manually
 client.on('oboe', function(oboe, client) {
-  // configure the `oboe` instance directly
+  // configure the `oboe` instance
 });
 ```
 
@@ -151,14 +151,14 @@ These are a mix of Oboe's API and a few convenience things to help ease its use.
 
 Property   | Oboe?     | Purpose
 ---------: | :-------: | :---------------------------------
-root       | No        | Matches all root level objects one at a time.
-top        | No        | Convenience for matching top level nodes with a specific property. Shorthand for `node` keys by prepending '!.' to them.  [See](#usage-option-top)
+root       | No        | Specify a function to call for each root object
+top        | No        | Convenience for matching top level nodes with a specific property. Shorthand for `node` keys by prepending '!.' to them. See [Example Configuration](#example-configuration)
 node       | [Yes](http://oboejs.com/api#node-event) | Add patterns to match keys and retrieve their values.
 path       | [Yes](http://oboejs.com/api#path-event) | Listen for parsing errors. This library does that for
 fail       | [Yes](http://oboejs.com/api#fail-event) | Listen for parsing errors. This library does that for you and emits it as an 'error' event. Feel free to listen to 'fail' as well...
 done       | [Yes](http://oboejs.com/api#done-event) | Normally used to get the entire JS object at the end, which this library is intending to avoid.
 
-Below is an example of objects and how they relate to parsing them.
+Below are examples of objects and how to configure functions for processing them.
 
 ### Simple Objects
 
@@ -200,7 +200,7 @@ Use 'top' to process the object value of the label.
 }
 ```
 
-## Multiple Labels
+### Multiple Labels
 
 Process multiple top level properties.
 
@@ -211,6 +211,8 @@ Process multiple top level properties.
   footer: { some: 'footer' }
 }
 ```
+
+### Example Configuration
 
 Here are options to work with the above objects.
 

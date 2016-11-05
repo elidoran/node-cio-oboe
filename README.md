@@ -19,7 +19,7 @@ npm install @cio/oboe --save
 ```
 
 
-## Usage: Use in CIO
+## Usage: Overview
 
 See [cio](https://github.com/elidoran/node-cio)
 

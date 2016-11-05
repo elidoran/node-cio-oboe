@@ -28,7 +28,7 @@
   },
   "bugs": "http://github.com/elidoran/node-cio-oboe/issues",
   "devDependencies": {
-    "cio": "^0.3.0",
+    "cio": "^0.4.1",
     "coffee-script": "^1.11.1",
     "mocha": "^3.1.2",
     "strung": "^1.0.5"

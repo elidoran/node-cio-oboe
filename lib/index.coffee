@@ -10,7 +10,7 @@ module.exports = ->
   unless @oboe? and @oboe isnt false then return
 
   # whether client or server client...
-  socket = @client ? @connection
+  socket = @client ? @serverClient
 
   # create oboe and store it on the socket
   oboe = socket.oboe = buildOboe socket
